@@ -1,0 +1,120 @@
+.container {
+	background-image: url('../../../assets/images/sports-bg.jpg');
+	background-size: 100%;
+	background-attachment: fixed;
+}
+.history_pg{
+	background-color: #fff;
+    border-radius: 5px;
+    padding: 50px;
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.history_pg .activity_card{
+	background-color: #f9f9ff;
+	border-radius: 4px;
+	box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.1);
+	height: 330px;
+	margin-top: 20px;
+
+}
+
+.history_pg .activity_card img {
+    width: 100px;
+}
+
+.history_pg .detail_activity p {
+    margin: 0px;
+    line-height: 26px;
+}
+.history_pg .detail_activity {
+    padding: 12px;
+    padding-top: 0px;
+}
+.history_pg .head_card {
+    padding: 12px;
+    padding-bottom: 0px;
+}
+.history_pg .head_card p {
+    margin-top: 1em;
+}
+.history_pg .title_activity {
+    color: #12959f;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.history_pg .location{
+	color: #12959f;
+    font-weight: bold;
+}
+/*.history_pg .open_card{
+	width:100%;
+	background-color:#12959f;
+	color:#fff;
+	border:1px solid transparent;
+	margin-top: 20px;
+	padding:10px;
+}
+
+.history_pg .open_card:hover{
+	background-color:#fff;
+	color:#12959f;
+	border:1px solid #12959f;
+	padding:10px;
+}*/
+
+/*----------Action_Dropdown----------------*/
+
+
+.action_dropbtn {
+    background-color: #12959f;
+    color: #fff;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    width:100%;
+    margin-top: 20px;
+    padding:10px;
+    border-radius: 4px;
+}
+.action_dropbtn:hover{
+	background-color:#fff;
+	color:#12959f;
+	border:1px solid #12959f;
+	padding:10px;
+}
+
+.action_dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.action_dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.action_dropdown .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.action_dropdown:hover .dropdown-content {display: block;}
+
+.action_dropdown:hover .dropbtn {background-color: #3e8e41;}
+/*-------------------------------------------------------------*/
+
+@media (max-width: 768px){
+
+}

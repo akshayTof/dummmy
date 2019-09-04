@@ -1,0 +1,145 @@
+
+.title_page {
+    margin-bottom: 18px;
+    background-color: #fff;
+    box-shadow:0px 0px 10px 0px #3333;
+    padding: 15px;
+}
+.title_page h1{
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    text-align: center;
+}
+.title_page h1 span{
+    white-space: nowrap;
+    color: #000;
+    font-size: 73px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.1;
+    opacity: 0.03;
+    margin-top: -5px;
+}
+
+::placeholder{
+	color:#ececec !important;
+}
+
+.view_event {
+    background-color: #fff;
+    box-shadow:0px 0px 10px 0px #3333;
+    padding: 0px 100px 0px 100px;
+}
+.event_img{
+	height:400px;
+	background-attachment: fixed;
+	/* background-image: url("./imgs/bg_clt.png"); */
+	background-size: 100%;
+}
+.event_detail{
+	background-color: #fff;
+	box-shadow:0px 0px 10px 0px #3333; 
+	padding: 20px;
+	border-radius: 6px;
+	margin-top: 40px;
+}
+.event_detail h4{
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+.event_detail p{
+	font-size: 12px;
+}
+.event_detail b{
+	color:#12959f;
+}
+.event_detail .fa-map-marker-alt{
+	color:#333333;
+}
+.event_detail li{
+	display: inline-block;
+	margin-right: 50px;
+
+}
+.btns_status .btn{
+	background-color: #fff;
+	border:1px solid #12959f;
+	color:#12959f;
+	padding: 10px 30px;
+}
+
+.selected{
+	background-color: #12959f !important;
+	border:1px solid #12959f !important;
+	color:#fff !important;
+}
+.overflow_detail {
+    margin-top: -134px;
+    font-weight: bold;
+}
+.fill_auto {
+    border-bottom: 1px solid #d2d2d7;
+    padding-bottom: 12px;
+}
+.fill_auto p{
+	margin-bottom: 0px;
+}
+.host_img img{
+	border-radius: 50%;
+	width:80px;
+	height: 80px;
+	border:4px solid #d2d2d7;
+}
+.host_img{
+	text-align: center;
+}
+.host_detail{
+	border-bottom: 1px solid #d2d2d7;
+}
+.host_detail h4{
+	margin-top: 20px;
+	color: #12959f;
+}
+.host_detail ul{
+	list-style: none;
+}
+
+.host_detail li{
+	display: block;
+	line-height: 22px;
+}
+
+.event_img {
+	background-position-y: 25%;
+}
+ 
+ .host_img {
+	height: 80px;
+}
+ .event_detail ul {
+ padding-left:0px;
+}
+
+
+@media only screen and (min-width:320px) and (max-width:768px){
+    .title_page h1 span {
+        font-size: 35px;
+    }
+    .title_page h1{
+    	font-size: 25px;
+    }
+
+}
+
+@media (max-width: 992px){
+
+}
+@media (min-width:1200px){
+    .view_event .container {
+        width: 890px;
+    }
+}

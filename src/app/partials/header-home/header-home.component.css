@@ -1,0 +1,66 @@
+  /* genric class */
+
+  .dropdown:hover .dropdown-menu{
+    display:block;
+    cursor: pointer;
+    }
+
+    .navbar-inverse li{
+     cursor: pointer;
+    }
+  /* khtam */
+
+
+  
+  .navbar-inverse {
+      background-color: #333745;
+      border-color: transparent;
+      color:#fff;
+      border-radius: 0px;
+      padding: 12px;
+  }
+  .navbar-inverse .navbar-nav > li > a{
+      color:#fff;
+  }
+  .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+      color: #fff;
+      background-color:transparent;
+  
+  }
+  .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+      color: #fff;
+      background-color: transparent;
+  
+  }
+  .inner_nav_brand img{
+      width:50px;
+  }
+  .navbar-brand{
+      padding: 0px;
+      margin-left: 20px !important;
+  }
+  .inner_navbar .nav.navbar-nav{
+      margin-left: 60px;
+  }
+  .inner_navbar .nav.navbar-nav a {
+      padding-right: 39px !important;
+      font-size: 13px;
+      font-weight: bold;
+  }
+  .pro_options{
+      border-radius: 50%;
+      width: 30px;
+  }
+  .friendreq_drop .fas, .notification_drop .fas{
+      font-size: 20px !important;
+  }
+  .logout a{
+      padding-top: 10px !important;
+  }
+  .drop .dropdown-menu a{
+      padding: 12px;
+      border-left: 2px solid transparent;
+  }
+  .drop .dropdown-menu a:hover{
+      border-left: 2px solid #12959f;
+  }

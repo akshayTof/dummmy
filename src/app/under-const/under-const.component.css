@@ -1,0 +1,8 @@
+.form{padding: 50px 0; background-image: url('../../assets/images/sports-bg.jpg');background-size: cover; background-attachment: fixed;}
+.login-form{background-color:#fff;width:100%;padding:50px; box-shadow: 0 0 30px -7px rgba(0,0,0,0.5);}
+.h1{font-size: 42px;line-height: 1; /*font-family: 'oswald', sans-serif*/}  
+h1{font-size: 42px;font-family: 'oswald', sans-serif;font-weight: bold;}
+h1 span{ color: var(--green); }
+h1.heading1:first-letter{color: var(--blue);}
+h1.heading:first-letter{color: var(--green);}
+.heading:after{content: ''; display: block; margin-top: 30px;width: 150px; border-top: 3px solid var(--green); margin-bottom: 20px;}

@@ -1,0 +1,108 @@
+footer{
+    margin: 0;
+    position: relative; 
+    background-image: url("../../../assets/images/footer-bg.jpg"); 
+    background-position: center center; 
+    background-size: cover; 
+    padding: 100px 0 30px 0;}
+footer hr{
+    border-top: 1px solid #fff; 
+    opacity: 0.3;
+}
+.subscribe input.form-control{
+    height: 50px; 
+    border-radius: 50px 0 0 50px; 
+    padding-left: 30px;
+}
+
+.footer-tags li a, .footer-menu li a{
+    color: #ddd;
+    font-size: 1.25rem; 
+    text-transform: uppercase; 
+    line-height: 2;
+}
+.footer-menu li a:hover{
+    color: #fff;
+}
+.footer-tags li{
+    padding-left:0; 
+    margin-bottom: 5px;
+}
+.footer-tags li a{
+    font-size: 1rem; 
+    border:1px solid #fff; 
+    border-radius: 3px; 
+    padding: 4px 8px; 
+    position: relative;
+    display: inline-block;
+    margin: 2px 0;
+}
+.footer-tags li a:hover{
+    color: #222; 
+    background-color: #fff; 
+    border-radius: 3px; 
+    transform: scale(1.1,1.1);
+}
+.footer-social li a i.fa{
+    float: right;
+    color:#222; 
+    height: 44px; 
+    width: 44px; 
+    line-height: 44px; 
+    background-color: #fff; 
+    border-radius: 50%;
+}
+.footer-social li a:hover i.fa{
+    color:#fff;
+    box-shadow: 0 4px 25px -2px rgba(0,0,0,0.8); 
+    transform: translateY(-3px);
+}
+.footer-social li a:hover .fa-facebook{background-color: #3b5998; }
+.footer-social li a:hover .fa-twitter{background-color: #55acee; }
+.footer-social li a:hover .fa-instagram{background-color: #e95950; }
+.footer-social li a:hover .fa-google-plus{background-color: #dd4b39; }
+.footer-social li a:hover .fa-youtube{background-color: #ff0000; }
+.footer-social li a:hover .fa-snapchat{background-color: #fffc00; }
+.copyright p, .copyright li a{
+    color:#fff; 
+    float: left;
+}
+.copyright ul{
+    float: right;
+}
+.topLink{position: fixed; bottom:20px; right:20px; z-index: 999;}
+.topLink i.fa{
+    width:60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #222;
+    font-size: 20px;
+    text-align: center;
+    animation-name: float;
+    -webkit-animation-name: float; /* Safari 4.0 - 8.0 */
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    box-shadow: 0 3px 20px -2px rgba(0,0,0,0.5);
+}
+.topLink i.fa:hover{background-color: #08c5d5; color:#fff;animation-play-state: paused; -webkit-animation-play-state: paused;}
+
+@-webkit-keyframes float {
+    0% {transform: translateY(-20px);}
+    50% {transform: translateY(0px);}
+    100% {transform: translateY(-20px);}
+}
+
+/* Standard syntax */
+@keyframes float {
+    0% {transform: translateY(-20px);}
+    50% {transform: translateY(0px);}
+    100% {transform: translateY(-20px);}
+    100% {bottom: 50px;}
+}
+
+.mt-20{margin-top: 20px!important;}
+.mb-50{margin-bottom: 50px!important;}

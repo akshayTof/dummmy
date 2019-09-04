@@ -1,0 +1,154 @@
+<div class="signUp">
+
+
+  <div class="col-md-4 left_space">
+    <section class="video_section">
+      <div class="overlay"></div>
+      <div class="inner_left">
+        <div class="padding_inner">
+          <div class="img_logo">
+            <img src="assets/images/logo.png" routerLink="">
+          </div>
+          <p class="welcome" style="text-transform: uppercase;">Welcome to Swift Spar App</p>
+          <h2>Let us play and <br>have fun each day</h2>
+          <p class="italic">Find local "Fun activities" and "Events" <br>to do with people near you.</p>
+        </div>
+      </div>
+
+      <div class="follow_us">
+        <p>Follow us on </p>
+        <ul>
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+          <li><i class="fab fa-youtube"></i></li>
+        </ul>
+      </div>
+      <div class="slides ">
+        <ul>
+          <!-- slides -->
+          <li><img src="assets/images/newAssests/one.jpg" alt="image01" />
+          </li>
+
+          <li><img src="assets/images/newAssests/two.jpg" alt="image02" />
+          </li>
+
+          <li><img src="assets/images/newAssests/three.jpg" alt="image03" />
+          </li>
+
+          <li><img src="assets/images/newAssests/four.jpg" alt="image04" />
+          </li>
+
+          <li><img src="assets/images/newAssests/five.jpg" alt="image05" />
+          </li>
+
+          <li><img src="assets/images/newAssests/six.jpg" alt="image06" />
+          </li>
+
+          <li><img src="assets/images/newAssests/six.jpg" alt="image07" />
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+
+
+  <div class="col-md-8">
+    <section class="right_portion">
+
+
+      <div class="signup_form">
+        <div class="up_button">
+          <span class="inline_signup">Already have an account?</span>
+          <span class="inline_signup"><button class="btn btn-default" routerLink="/user/login">SIGN IN</button></span>
+        </div>
+
+        <div class="main_signup_form">
+          <!-- 	<h1>Come join our network</h1> -->
+          <form class="signup" (ngSubmit)="onSignup(f)" #f="ngForm">
+
+            
+
+            <div class="picture-container">
+              <div class="picture">
+                <img src="assets/images/profile-placeholder.png" class="picture-src" id="wizardPicturePreview" title="">
+                <input type="file" id="wizard-picture" class="" type="file" class="inputfile inputfile-1" name="user-pic"
+                  ngModel accept="image/*" (change)="onFileChange($event.target.files)">                  
+              </div>
+              <p class="postaccept" *ngIf="message"><b> {{displayMsg}}</b></p> 
+            </div>
+
+            <!-- <p class="postaccept" *ngIf="message">{{displayMsg}}</p>  -->
+
+            <div class="form-group">
+              <label>FULL NAME</label>
+              <input type="name" required autocomplete="off" name="fullName" ngModel #fullName="ngModel" fullName class="form-control"
+                id="fullName" placeholder="Horace Hemley">
+            </div>
+            <div class="form-group">
+              <label>EMAIL ADDRESS</label>
+              <input type="email" required class="form-control" placeholder="horace@swiftspar.com" autocomplete="off" name="email"
+                ngModel #email="ngModel" email>
+
+            </div>
+
+            <div class="main_dob_gender clearfix">
+            <!-- <div class="form-group half_input select_gender" 
+            [ngClass]='{rotations : rotation === true}' 
+            (click)=checkRotate()>
+              <label for="gender">SELECT GENDER</label>
+
+              <select class="form-control" id="gender" name="gender" #gender="ngModel" (click)="valSelected()" gender ngModel>
+                <option class = "optionsStyle" value="Male" selected="selected" >Male</option>
+                <option class = "optionsStyle" value="Female" >Female</option>
+                <option class = "optionsStyle" value="Other Identity" >Other Identity</option>
+              </select>
+
+              <i class="fa fa-angle-down"></i>
+            </div> -->
+
+            <div class="form-group half_input select_gender" 
+            [ngClass]='{rotations : rotation === true}' 
+            (click)=checkRotate()>
+              <label for="gender">SELECT GENDER</label>
+
+              <mat-select class="form-control selectGenderClass" placeholder="Select gender" gender ngModel>
+                  <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                    {{gender.viewValue}}
+                  </mat-option>
+                </mat-select>
+            </div>
+
+
+            <div class="form-group half_input dob_div">
+                <label>DATE OF BIRTH</label>
+
+                    <input class="form-control"  matInput [matDatepicker]="picker" date="true" time="true" placeholder="Choose a date">
+                    <span class="datePickerIcon">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </span>
+            </div>
+          </div>
+
+            <div class="form-group">
+              <label>PASSWORD</label>
+              <input type="password" required class="form-control" placeholder="6+ characters" type="password" name="password"
+                id="password" class="form-control" ngModel required>
+            </div>
+
+
+            <div class="form-group s_in">
+              <button type="submit" class="btn btn-default signin_btn">CONTINUE</button>
+            </div>
+            <p style="font-size: 12px;color: #8C96A9">By clicking "CONTINUE" I agree to Swift Spar <a style="list-style: underline;"
+                href="#">Terms of Service</a> and <a style="list-style: underline;" href="#">Privacy Policy</a>.</p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+</div>
+</div>
+

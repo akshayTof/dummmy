@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <section class="col-md-12">
+            <div class="title_page">
+                <!-- eventShow -->
+                <h1>{{eventShow.event_name}}<span>{{eventShow.event_name}}</span></h1>
+            </div>
+  
+          <div class=view_event>
+
+              
+            <div class="container-fluid">
+              <div *ngIf="checkEventImage" class="event_img" [style.background-image]="'url('+ imagePath + eventImage +')'">
+              </div>
+              <div *ngIf="!checkEventImage" class="event_img" [style.background-image]="'url('+  eventImage +')'">
+                </div>
+            </div>
+  
+            <div class="container">
+
+
+              <div class="event_detail overflow_detail">
+                <h4>{{eventShow.event_name}}</h4>
+                <p style="color:#d2d2d7;">Hosted by {{eventShow.host_name}}</p>
+                <a href="#"><p><i class="fas fa-map-marker-alt"></i>&nbsp;<b class="location_get">{{eventShow.event_location}}</b></p></a>
+                <ul class="date_time_ul">
+                  <li>
+                    <p>Date</p>
+                    <p><span><i class="fas fa-calendar-alt"></i></span>&nbsp;{{eventShow.event_time}}</p>
+                  </li>
+                  <li>
+                    <p>Time</p>
+                    <p><span><i class="fas fa-clock"></i></span>&nbsp;{{eventShow.event_time}}</p>
+                  </li>
+                </ul>
+  
+                <ul>
+                  <li>{{eventShow.total_going}} <b>Going</b></li>
+                  <li>{{eventShow.tot_intrest}} <b>Interested</b></li>
+                </ul>
+  
+                <div class="btns_status text-right">
+                  <ul>
+                    <li>
+                      <button *ngIf="eventShow.isIntrested == 1" class="btn btn-default selected">Interested</button>
+                      <button *ngIf="eventShow.isIntrested == 0" class="btn btn-default">Interested</button>
+                    </li>
+                    <li>
+                      <button *ngIf="eventShow.follow == 1" class="btn btn-default selected">Going</button>
+                      <button *ngIf="eventShow.follow == 0" class="btn btn-default">Going</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+  
+              <div class="event_detail">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="fill_auto">
+                      <label>Seats Avaliable</label>
+                      <p>{{eventShow.remaining_seats}} Out of {{eventShow.event_seating_capacity}}</p>
+                    </div>
+                  </div>
+  
+                  <div class="col-md-6">
+                    <div class="fill_auto">
+                      <label style="color:transparent;">.</label><br>
+                      <span>Attendence Count</span><span style="float:right;">{{eventShow.follow}}</span>
+                    </div>
+                  </div>
+                </div>	
+                  <div class="host_detail">
+                    <h4>Host's Detail</h4>
+  
+                    <div class="host_img">
+                        <!-- user_pic -->
+                      <img [src] ="eventShow.user_pic ? imagePath + eventShow.user_pic : displayImage">
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <ul>
+                          <li>Name</li>
+                          <li>Email</li>
+                          <li>Contact No</li>
+                        </ul>
+                      </div>
+  
+                      <div class="col-md-6 text-right">
+                        <ul>
+                          <li>{{eventShow.host_name}}</li>
+                          <li>{{eventShow.host_email}} </li>
+                          <li>{{eventShow.host_phone}} </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </section>
+  </div>

@@ -1,0 +1,236 @@
+.group_card .dropdown-menu {
+    left: -83px;
+}
+.groupcard_row{
+    margin:12px;
+}
+.left_portion{
+    background-color: #fff;
+    box-shadow:0px 0px 10px 0px #3333;
+    height:100vh;
+    padding: 0px;
+}
+.right-portion{
+    background-color: #fff;
+    box-shadow:0px 0px 10px 0px #3333;
+    padding: 19px;
+    margin-top: 15px;
+    height: 70vh;
+    overflow-y: scroll;
+}
+.title_page {
+    margin-bottom: 18px;
+    background-color: #fff;
+    box-shadow:0px 0px 10px 0px #3333;
+    padding: 19px;
+}
+.title_page h1{
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    text-align: center;
+}
+.title_page h1 span{
+    white-space: nowrap;
+    color: #000;
+    font-size: 73px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.1;
+    opacity: 0.03;
+    margin-top: -5px;
+
+}
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.search_bar{
+    text-align: right;
+}
+.partition .nav-tabs > li {
+    margin-bottom: -1px;
+}
+.partition .main_tabs_1 > li.active > a, .main_tabs_1 > li.active > a:focus, .main_tabs_1 > li.active > a:hover {
+    color: #12959f;
+    cursor: default;
+    background-color: #fff;
+    border: none;
+     border-bottom: 1px solid #12959f;
+}
+
+.partition .main_tabs_1 a{
+    color:#5f6368;
+    border-bottom: 1px solid transparent;
+}
+.partition input {
+    border: 1px solid #d2d2d7;
+    border-radius: 100px;
+    padding: 6px;
+    padding-left: 15px;
+    position: relative;
+    width: 282px;
+}
+.partition button {
+    position: absolute;
+    right: 15px;
+    padding: 7px 19px;
+    border-radius: 100px;
+    background-color: #12959f;
+    border: none;
+    color: #fff;
+}
+.tab-content {
+    margin-top: 0px;
+}
+
+.partition .nav-tabs > li {
+    margin-bottom: -1px;
+}
+
+.tab_friends {
+    float: right !important;
+}
+.main_tabs_1 {
+    padding-right: 0px;
+}
+
+/*------------------cards---------------*/
+.events .group_card{
+    background-color: #f8f8f8;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 0px #3333;
+    padding-bottom:0px;
+    margin-top: 25px;
+    height: 297px;
+}
+.group_card{
+    height: 395px;
+ }
+.group_card img{
+    width: 100%;
+    height: 16vw;
+}
+
+.groupcard_row{
+    margin:12px;
+}
+.groupcard_row h5{
+    padding-left: 0px; 
+    text-align: left;
+}
+.groupcard_row .dropdown {
+    text-align: right;
+    padding: 0px;
+}
+.groupcard_row p{
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 6px;
+}
+.groupcard_row h5{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top:0px;
+}
+
+
+#friend_action_menu {
+    background-color: transparent;
+    border: 0px;
+    color:#adb5bd;
+}
+
+.admin_card{
+    background-color: #333;
+}
+.admin_card p{
+    color:#fff;
+}
+
+.status_card .btn-primary {
+    background-color: #fff;
+    color: #d2d2d7;
+    border: none;
+    width: 100%;
+    border:1px solid #ececec;
+}
+.status_card .active{
+    color:#12959f !important;
+}
+.status_card .active:hover{
+    background-color: #12959f;
+    color:#fff !important;
+    border:1px solid #fff;
+}
+.btn.active, .btn:active{
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.06);
+}
+.status_card .col-md-6 {
+    padding: 1px;
+}
+
+
+.eventShow span{
+    color:#333;
+}
+.eventShow span:hover{
+    color:#12959f;
+    cursor: pointer;
+}
+
+/* .events .group_card {
+	height: 380px;
+ } */
+
+ @media only screen and (min-width:1200px) {
+
+    .events .nearByCard {
+        height: 340px;
+    }
+ }
+
+ @media only screen and (min-width:1824px) {
+
+    .events .group_card {
+        height: 380px;
+    }
+ }
+
+
+@media only screen and (min-width:320px) and (max-width:768px){
+    .title_page h1 span {
+        font-size: 55px;
+    }
+    .partition input{
+        width: 100%;
+    }
+    .search_bar {
+        margin-top: 12px;
+    }
+
+    #search_user button {
+        right: 35px;
+    }
+    .groupcard_row h5 {
+        width: 60% !important;
+         float: left;
+    }   
+
+    .groupcard_row p {
+        width: 40%;
+    }
+}
+
+@media (max-width: 992px){
+    .group_card .dropdown-menu {
+        left: 0px;
+    }
+    .search_bar {
+        margin-top: 12px;
+    }
+}

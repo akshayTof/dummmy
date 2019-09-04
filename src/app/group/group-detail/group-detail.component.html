@@ -1,0 +1,197 @@
+<!-- end Left -->
+<div class="container-fluid">
+  <section class="col-md-12">
+          <div class="title_page">
+              <h1>{{groupShow.group_name}}<span>{{groupShow.group_name}}</span></h1>
+          </div>
+      
+  <div class="post_portion">
+    <!-- <h1 class="text-center">{{groupShow.group_name}}</h1> -->
+  
+    <!--Left-->
+    <div class="col-md-3">
+      <div class="group_detail bg_white">
+        <div class="group_dp text-center">
+          <img [src] ="groupShow.activity_pic ? imagePath + groupShow.activity_pic : dummyImage">
+          <p>{{groupShow.group_activity_name}}</p>
+        </div>
+        <div class="status_group">
+          <ul>
+            <li *ngIf="groupShow.status == 1 "><span style="color:#12959f;">Status</span> - Admin</li>
+            <li *ngIf="groupShow.status == 2 "><span style="color:#12959f;">Status</span> - Joined</li>
+            <li *ngIf="groupShow.status == 3 "><span style="color:#12959f;">Status</span> - Requested</li>
+            <li *ngIf="groupShow.status == 4 "><span style="color:#12959f;">Status</span> - Join</li>
+            
+            <li><span style="color:#12959f;">Members</span> - {{groupMembersCount}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+  <!-- center -->
+    <div class="col-md-6 center_scroll">
+      <div class="posts_div bg_white">
+        <h6 style="font-weight: bold;">Whats on your mind?</h6>
+        <textarea class="text_post" placeholder="Write your post here">
+        </textarea>
+        <ul>
+          <a style="color:#333;" href="#"><li><i style="color:#f4d81d;" class="far fa-image"></i>&nbsp; Upload Photo(s)</li></a>&nbsp;&nbsp;
+          <a style="color:#333;" href="#" data-toggle="modal" data-target="#myModal"><li><i style="color:#f75b58;" class="fas fa-map-marker-alt"></i>&nbsp; Check-in</li></a>
+            <!-- modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-body">
+                    
+                </div>
+              </div> 
+            </div>
+          </div>
+  
+  
+          <li class="post_button"><button type="button" class="btn btn-primary">Post</button></li>
+        </ul>
+      </div>
+
+      <div class="posts_and_comments bg_white">
+        <div *ngIf="noGroupFeed" class="no_post">
+            <img [src] ="nopost">
+            <p>No Post Yet</p>
+        </div>
+      </div>
+  
+      <div class="posts_and_comments bg_white" *ngFor="let groupFeed of groupFeeds">
+        <div class="single_post post_upload">
+          <span>
+            <!-- <img [src] ="groupFeed.user_pic ? imagePath + groupFeed.user_pic : displayImage"> -->
+
+            <img *ngIf="user.google_id !== '' " [src] ="user.user_pic ? user.user_pic : displayImage">
+            <img *ngIf="user.twitter_id !== '' " [src] ="user.user_pic ? user.user_pic : displayImage">
+            <img *ngIf="user.facebook_id !== '' " [src] ="user.user_pic ? user.user_pic : displayImage">
+            <img *ngIf="user.facebook_id == '' &&  user.google_id == '' && user.twitter_id == '' " 
+            [src] ="user.user_pic ? imagePath + user.user_pic : displayImage">
+          </span>
+  
+          <span class="post_time"><h4>{{groupFeed.first_name}} {{groupFeed.last_name}}</h4>
+            <p style="color:#d2d2d7; font-size: 10px;">2min ago</p>
+          </span>
+          <p>{{groupFeed.feed_message}}</p>	
+        </div>
+        <div class="post_image" *ngIf="groupFeed.feed_image !== '' ">
+          <img [src] ="groupFeed.feed_image ? imagePath + groupFeed.feed_image : dummyImage">
+        </div>
+  
+        <div class="like_comment">
+          <ul>
+            <li><a href="#"><i class="fas fa-thumbs-up"></i></a>&nbsp;
+              {{groupFeed.like_count}}
+            </li>
+            <li><a href="#"><i class="fas fa-comment-alt"></i></a>&nbsp;
+              {{groupFeed.comment_count}}Comment
+            </li>
+          </ul>
+        </div>
+        <div class="Comment_area">
+          <textarea class="comment" placeholder="Write your comment here">	
+          </textarea>
+          <button class="btn btn-primary"><img src="./imgs/sent-mail.png"></button>
+        </div>
+      </div>
+  
+        <!-- second_type_post -->
+      <!-- <div class=" single_post posts_and_comments bg_white">
+        <div class="single_post post_upload">
+          <span>
+            <img src="./imgs/pp1.png">
+          </span>
+  
+          <span class="post_time"><h4>John Deo</h4>
+            <p style="color:#d2d2d7; font-size: 10px;">2min ago</p>
+          </span>
+          <p>Upload Images   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p>	
+        </div>
+        
+        <div class="like_comment ">
+          <ul>
+            <li><a href="#"><i class="fas fa-thumbs-up"></i></a>&nbsp;20</li>
+            <li><a href="#"><i class="fas fa-comment-alt"></i></a>&nbsp;Comment</li>
+          </ul>
+        </div>
+        <div class="Comment_area">
+          <textarea class="comment" placeholder="Write your comment here">	
+          </textarea>
+          <button class="btn btn-primary"><img src="./imgs/sent-mail.png"></button>
+        </div>
+      </div> -->
+  
+      <!-- third_post -->
+  
+  <!-- <div class="multi_images_post posts_and_comments bg_white">
+        <div class="single_post post_upload">
+          <span>
+            <img src="./imgs/pp1.png">
+          </span>
+  
+          <span class="post_time"><h4>John Deo</h4>
+            <p style="color:#d2d2d7; font-size: 10px;">2min ago</p>
+          </span>
+          <p>Upload Images   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean</p>	
+        </div>
+        <div class="post_image">
+          <div class="col-md-4 left_post">
+            <img src="./imgs/ft_img.png">
+          </div>
+          <div class="col-md-4 left_post">
+            <img src="./imgs/ft_img.png">
+          </div>
+          <div class="col-md-4 left_post">
+            <img src="./imgs/ft_img.png">
+          </div>
+        </div>
+  
+        <div class="like_comment">
+          <ul>
+            <li><a href="#"><i class="fas fa-thumbs-up"></i></a>&nbsp;20</li>
+            <li><a href="#"><i class="fas fa-comment-alt"></i></a>&nbsp;Comment</li>
+          </ul>
+        </div>
+        <div class="Comment_area">
+          <textarea class="comment" placeholder="Write your comment here">	
+          </textarea>
+          <button class="btn btn-primary"><img src="./imgs/sent-mail.png"></button>
+        </div>
+      </div> -->
+  
+    </div>
+
+
+  
+      <!-- right -->
+    <div class="col-md-3">
+      <div class="members_list bg_white">
+        <div class="memberlist_title">
+          <p>Members</p>
+        </div>
+        <ul>
+          <li *ngFor="let groupMember of groupMembers">
+            <span>
+              <img class="image-circle" [src] ="groupMember.user_pic ? imagePath + groupMember.user_pic : displayImage">
+            </span> 
+            <span>
+              <p style="font-weight: bold; font-size: 12px;" class="member_name">
+                {{groupMember.first_name}} {{groupMember.last_name}}</p>
+                <p style="color:#d2d2d7; font-size: 10px;" class="membergroup_status">
+                  joined
+                </p>
+            </span></li>
+          
+          <!-- <li style="border:1px solid #ececec; text-align: center;" 
+          class="see_all"><a href="#">See All</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  </section>
+  </div>

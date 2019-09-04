@@ -1,0 +1,163 @@
+<!--end Left -->
+<section class="col-md-12">
+  <div class="title_page">
+      <h1>EVENTS<span>EVENTS</span></h1>
+      <div class="partition clearfix">
+       <ul class="col-md-4 nav nav-tabs main_tabs_1">
+          <li class="active"><a data-toggle="tab" href="#home">My Events</a></li>
+          <li class=""><a data-toggle="tab" href="#menu1" (click)="getNearbyEvents()">Nearby</a></li>
+          <li class="tab_friends"><a data-toggle="tab" href="#menu2" (click)="getHistoricEvents()">History</a></li>
+        </ul>
+          <!-- <ul class="col-md-8 search_bar">
+              <li>
+                  <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+              </li>
+          </ul> -->
+      </div>
+  </div>
+
+    <!-- my events tab -->
+    <div class="right-portion events">
+        <div class="tabs_pills">
+            <div class="tab-content main_tabs">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="col-md-3" *ngFor="let myEvent of myEvents">  
+                        <div class="group_card">
+                            <img [src] ="myEvent.event_pic ? imagePath + myEvent.event_pic : dummyImage">
+                            <div class="row groupcard_row">
+                                <h5 class="col-md-10 eventShow">
+                                <span routerLink="/events/detail"
+                                (click)="eventDetail(myEvent)">{{myEvent.event_name}}</span><br><p>{{myEvent.event_location}}</p></h5>
+                                <div class="dropdown col-md-2">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="friend_action_menu" data-toggle="dropdown">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="friend_action_menu">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Navigate</a></li>
+                                        <li *ngIf="myEvent.user_id == user.user_id " role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
+                                        <li *ngIf="myEvent.user_id == user.user_id " role="presentation">
+                                            <a role="menuitem" tabindex="-1" (click)="deleteEvent(myEvent , 1)">Delete</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu1" class="tab-pane fade"> 
+                    <!-- uncomment this -->
+                    <!-- <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Location</label>
+                            <select class="form-control border" id="selector">
+                            <option value="0" disabled="disabled" selected>Select Day Type</option>
+                            <option value="volvo">Nearby</option>
+                            <option value="saab">Select City</option>
+                            </select>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control border" id="selector">
+                            <option value="0" disabled="disabled" selected>Select Event Category</option>
+                            <option value="volvo">All</option>
+                            <option value="saab">Movies</option>
+                            </select>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Distance</label>
+                            <select class="form-control border" id="selector">
+                            <option value="0" disabled="disabled" selected>Select Event Category</option>
+                            <option value="volvo">150 Miles</option>
+                            <option value="saab">300 Miles</option>
+                            </select>
+                            <i class="fas fa-sort-down"></i>
+                        </div>
+                    </div> -->
+
+                    <!-- tabs-end -->
+
+                    <!-- cards -->
+                    <div class="col-md-3" *ngFor="let nearbyEvent of nearbyEvents">  
+                        <div class="group_card nearByCard">
+                            <img [src] ="nearbyEvent.event_pic ? imagePath + nearbyEvent.event_pic : dummyImage">
+                            <div class="row groupcard_row">
+                                    <h5 class="col-md-10 eventShow">
+                                        <span routerLink="/events/detail"
+                                        (click)="eventDetail(nearbyEvent)">{{nearbyEvent.event_name}}</span><br><p>{{nearbyEvent.event_location}}</p></h5>
+                                <div class="dropdown col-md-2">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="friend_action_menu" data-toggle="dropdown">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="friend_action_menu">
+                                        <li  role="presentation"><a role="menuitem" tabindex="-1" href="#">Navigate</a></li>
+                                        <li *ngIf="nearbyEvent.user_id == user.user_id " role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
+                                        <li *ngIf="nearbyEvent.user_id == user.user_id "role="presentation">
+                                            <a role="menuitem" tabindex="-1" (click)="deleteEvent(nearbyEvent , 2)">Delete</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="status_card" *ngIf="nearbyEvent.user_id !== user.user_id ">
+                                    <div class="col-md-6">
+                                        <button *ngIf="nearbyEvent.isIntrested == 0 " class="btn btn-primary Interested_btn active" (click)="addEventInterest(nearbyEvent)">
+                                        Interested</button>
+                                        <button *ngIf="nearbyEvent.isIntrested == 1 " class="btn btn-primary Interested_btn" (click)="unGoingUnintrestedEvent(nearbyEvent , 2)">
+                                            Interested</button>
+                                    </div>
+                                        <div class="col-md-6">
+                                        <button *ngIf="nearbyEvent.accept_event == 0 " class="btn btn-primary active" (click)="goingEvent(nearbyEvent)">
+                                            Going</button>
+                                        <button *ngIf="nearbyEvent.accept_event == 1 " class="btn btn-primary " (click)="unGoingUnintrestedEvent(nearbyEvent , 1)">
+                                            Going</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- history tab -->
+                <div id="menu2" class="tab-pane fade">
+
+                <div class="col-md-3"  *ngFor="let historyEvent of historyEvents">  
+                        <div class="group_card">
+                                <img [src] ="historyEvent.event_pic ? imagePath + historyEvent.event_pic : dummyImage">
+                                <div class="row groupcard_row">
+                                        <h5 class="col-md-10 eventShow">
+                                            <span routerLink="/events/detail"
+                                            (click)="eventDetail(historyEvent)">{{historyEvent.event_name}}</span><br><p>{{historyEvent.event_location}}</p></h5>
+                                <div class="dropdown col-md-2">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="friend_action_menu" data-toggle="dropdown">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="friend_action_menu">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Navigate</a></li>
+                                        <li *ngIf="historyEvent.user_id == user.user_id " role="presentation"><a role="menuitem" tabindex="-1" href="#">Reuse</a></li>
+                                        <li role="presentation">
+                                            <a role="menuitem" tabindex="-1" (click)="deleteEvent(historyEvent , 3)">Delete</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="noHistoryEvents" class="message noRequest text-center">
+                        <img [src] ="noEvents">
+                        <p class="postaccept"><b> No Events yet</b></p> 
+                              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

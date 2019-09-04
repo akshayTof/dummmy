@@ -1,0 +1,260 @@
+<!-- <div   class = "centered" *ngIf="!isLoading">
+	<div class = "blob-1"></div>
+	<div class = "blob-2"></div>
+</div> -->
+<div  *ngIf="isLoading" class="loader"></div>
+
+<section class="col-md-2 left_portion">
+  <div class="profile_info clearfix">
+    <div class="pic_name clearfix">
+      <div class="col-md-6">
+        <!-- <img class="image-circle " [src] ="user.user_pic ? imagePath + user.user_pic : displayImage"> -->
+
+        <img class="image-circle " *ngIf="user.google_id !== '' " [src] ="user.user_pic ? user.user_pic : displayImage">
+        <img class="image-circle " *ngIf="user.twitter_id !== '' " [src] ="user.user_pic ? user.user_pic : displayImage">
+        <img class="image-circle " *ngIf="user.facebook_id !== '' " [src] ="user.user_pic ? user.user_pic : displayImage">
+        <img class="image-circle " *ngIf="user.facebook_id == '' &&  user.google_id == '' && user.twitter_id == '' " 
+        [src] ="user.user_pic ? imagePath + user.user_pic : displayImage">
+      </div>
+      <div class="col-md-6 name_age">
+        <h3>{{user.first_name}}{{user.last_name}}</h3>
+        <p *ngIf="user.gender == 0 ">{{user.age}},Male</p>
+        <p *ngIf="user.gender == 1 ">{{user.age}},Female</p>
+        <p *ngIf="user.gender == 2 ">{{user.age}},Other Identity</p>
+      </div>
+    </div>
+  </div>
+
+<div class="points">
+  <ul>
+    <li><i  style="color:#f7c200;" class="fas fa-star"></i> &nbsp;LEVEL {{user.level}} ( {{user.points}} Points)</li>
+    <li><i style="color:#f66b59;" class="fas fa-basketball-ball"></i> &nbsp;ACTIVITIES  {{user.linkup_count}}</li>
+    <li><i style="color:#38596c;" class="fas fa-calendar-alt"></i> &nbsp;EVENTS {{user.event_count}}</li>
+  </ul>
+</div>
+
+<div class="tabs_links">
+  <ul>
+    <a routerLink="/profile/achievements" (click)="userProfile(user)">
+      <li><i class="fas fa-trophy"></i> &nbsp;Achievements</li>
+    </a>
+    <a routerLink="/profile/daysAvailable" (click)="userProfile(user)">
+      <li><i class="fas fa-tachometer-alt"></i> &nbsp;Days Avaliable</li>
+    </a>
+  </ul>
+</div>
+</section>
+
+
+<section class="col-md-10 rightSection active">
+	
+  <div class="title_page ">
+    <h1>PROFILE<span>PROFILE</span></h1>
+
+    <div class="partition clearfix">
+     <ul class="col-md-4 nav nav-tabs inner_tabs mainTabs">
+        <li class="active "><a data-toggle="tab" href="#home"
+          (click)="profileTab(0)">My Preferences</a></li>
+        <li class=""><a data-toggle="tab" href="#menu1"
+          (click)="profileTab(1)">Friends</a></li>
+          </ul>
+        <ul class="col-md-8 search_bar">
+          <li>
+            <form action="/action_page.php" *ngIf="localSearch ">
+              <input  type="text" placeholder="Search.." name="search" [(ngModel)]="searchText" (click)="search()">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </li>
+        </ul>
+    </div>
+  </div>
+
+<div class="right-portion">
+  <div class="tabs_pills">
+      <div class="tab-content main_tabs">
+      <div id="home" class="tab-pane fade in active">
+        <div class="row">
+          <div class="col-md-6" *ngFor="let userActivitiy of userActivities | filter : searchText  : 1 ;
+           let i = index">
+          <div class="cards">
+            <ul>
+              <li>
+                <span>
+                  <img [src] ="userActivitiy.activity_pic ? imagePath + userActivitiy.activity_pic : dummyImage">
+                  {{userActivitiy.activity_name}}</span>
+                  <!-- <div *ngIf="activityLoading && acticityId == i" class="loader"></div> -->
+                <span *ngIf="userActivitiy.selected == 1 "class="close_btn"><button class="button">
+                    <!-- <div *ngIf="activityLoading && acticityId == i" class="loader"></div> -->
+                  <i   class="fas fa-times-circle" (click)="setActivity(userActivitiy , i)"></i></button>
+                </span>
+                <span *ngIf="userActivitiy.selected == 0 " class="add_btn"><button class="button">
+                    <!-- <div *ngIf="activityLoading && acticityId == i" class="loader"></div> -->
+                    <i   class="fas fa-plus-circle" (click)="setActivity(userActivitiy , i)"></i></button>
+                    
+                </span>
+                <span *ngIf="userActivitiy.selected == 2 " class="close_btn"><button class="button">
+                    <div  class="loader"></div>
+                  </button>
+                </span>
+                
+              </li>
+            </ul>
+          </div>
+          </div>      
+        </div>
+      </div>
+
+      <div id="menu1" class="tab-pane fade">
+           <ul class="nav nav-tabs inner_tabs lowerTabs">
+            <li class="active"><a data-toggle="tab" href="#friends"
+              (click)="getUserFriends()">Friends</a></li>
+            <li><a data-toggle="tab" href="#friend_req" 
+              (click)="friendReq(user)" >
+              Friend Request</a></li>
+            <li><a data-toggle="tab" href="#search_user"
+              (click)="searchUser()">
+              Search Users</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div id="friends" class="tab-pane fade in active">
+              <div class="row">
+              <div class="col-md-3" *ngFor="let userFriend of userFriends | filter : searchText  : 2">
+                <div class="people_card">
+                  
+                    <img *ngIf="userFriend.google_id !== '' " [src] ="userFriend.user_pic ? userFriend.user_pic : displayImage">
+                    <img *ngIf="userFriend.twitter_id !== '' " [src] ="userFriend.user_pic ? userFriend.user_pic : displayImage">
+                    <img *ngIf="userFriend.facebook_id !== '' " [src] ="userFriend.user_pic ? userFriend.user_pic : displayImage">
+                    <img *ngIf="userFriend.facebook_id == '' &&  userFriend.google_id == '' && userFriend.twitter_id == '' " 
+                    [src] ="userFriend.user_pic ? imagePath + userFriend.user_pic : displayImage">
+
+                  <div class="row friendscard_row">
+                  <h5 class="col-md-8"><a class="user_profile_show"
+                    routerLink="/profile/user"
+                    (click)="userProfile(userFriend)">
+                    {{userFriend.first_name}} {{userFriend.last_name}}</a>
+                    <br><p>Age 23</p></h5>
+                  <div class="dropdown col-md-4">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="friend_action_menu" data-toggle="dropdown"><i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="friend_action_menu">
+
+                    <!-- <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ADD</a></li>
+                    <li role="presentation" class="divider"></li> -->
+                    <li role="presentation"><a class="remove" role="menuitem" tabindex="-1" 
+                      (click)="unfriend(userFriend)">UNFRIEND</a></li>
+                  </ul>
+                </div>
+                </div>
+                </div>
+              </div>    
+               
+              <div *ngIf="userFriendsMessage" class="message noRequest text-center">
+                <img [src] ="empty_friends">
+                  <p class="postaccept"><b>No friends to show &nbsp;&nbsp;</b></p> 
+              </div>     
+            </div>   
+            </div>
+
+            <div id="friend_req" class="tab-pane fade">
+              <div class="col-md-4" *ngFor="let userFriendRequest of userFriendRequests">
+                <div class="people_card">
+
+                    <img *ngIf="userFriendRequest.google_id !== '' " [src] ="userFriendRequest.user_pic ? userFriendRequest.user_pic : displayImage">
+                    <img *ngIf="userFriendRequest.twitter_id !== '' " [src] ="userFriendRequest.user_pic ? userFriendRequest.user_pic : displayImage">
+                    <img *ngIf="userFriendRequest.facebook_id !== '' " [src] ="userFriendRequest.user_pic ? userFriendRequest.user_pic : displayImage">
+                    <img *ngIf="userFriendRequest.facebook_id == '' &&  userFriendRequest.google_id == '' && userFriendRequest.twitter_id == '' " 
+                    [src] ="userFriendRequest.user_pic ? imagePath + userFriendRequest.user_pic : displayImage">
+
+                  <div class="row friendscard_row">
+                  <h5 class="col-md-8"><a class="user_profile_show"
+                    routerLink="/profile/user"
+                    (click)="userProfile(userFriendRequest)">{{userFriendRequest.first_name}} {{userFriendRequest.last_name}}</a><br><p>Age 29</p></h5>
+                  <div class="dropdown col-md-4">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="friend_action_menu" data-toggle="dropdown"><i class="fas fa-ellipsis-v"></i>
+                  </button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="friend_action_menu">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" 
+                      (click)="acceptReject(userFriendRequest , 2)">ADD</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation"><a  role="menuitem" tabindex="-1" 
+                      (click)="acceptReject(userFriendRequest , 3)">REMOVE</a></li>
+                  </ul>
+                </div>
+                </div>
+                </div>
+              </div>
+
+              <div *ngIf="userFriendRequestsMessage" class="message noRequest text-center">
+                <img [src] ="noReqImage">
+                  <p class="postaccept"><b> No Friend Request</b></p> 
+                  
+              </div>
+
+            </div>
+
+            <div id="search_user" class="tab-pane inner_search fade">
+              <div class="full_searchbox">
+              <form class="" action="/action_page.php">
+                <!-- all type search in this comment -->
+              <!-- <input type="text" placeholder="Search.." name="search" 
+              ngModel [(ngModel)]="searchUserValue"
+               (input)="searchPeoples($event.target.value)"
+               > -->
+               <input type="text" placeholder="Search.." name="search" 
+              ngModel [(ngModel)]="searchUserValue"
+               >
+              <button type="submit" 
+              (click)="searchPeoples(searchUserValue)"
+              ><i class="fa fa-search" ></i></button>
+              </form>
+            </div>
+            <div class="searchresult_list">
+                <section class="search_user">
+
+                    <!-- searchUsers -->
+                  <div class="col-md-4" *ngFor="let searchUser of searchUsers">
+                    <div class="search_user_list already_friend">
+                      <ul>
+                        <li class="searchUserImage">
+                            
+                          <img *ngIf="searchUser.google_id !== '' " [src] ="searchUser.user_pic ? searchUser.user_pic : displayImage">
+                          <img *ngIf="searchUser.twitter_id !== '' " [src] ="searchUser.user_pic ? searchUser.user_pic : displayImage">
+                          <img *ngIf="searchUser.facebook_id !== '' " [src] ="searchUser.user_pic ? searchUser.user_pic : displayImage">
+                          <img *ngIf="searchUser.facebook_id == '' &&  searchUser.google_id == '' && searchUser.twitter_id == '' " 
+                          [src] ="searchUser.user_pic ? imagePath + searchUser.user_pic : displayImage">
+                        </li>
+                        <li class="searchUserName">&nbsp;&nbsp;<a class="user_profile_show"
+                          routerLink="/profile/user"
+                          (click)="userProfile(searchUser)">{{searchUser.first_name}}{{searchUser.last_name}}</a></li>
+                        <li *ngIf="searchUser.friend == 1 " class="list_action">
+                          <button class="btn btn-primary" >
+                            <i class="fas fa-user-check" style="color :#12959f;"></i>
+                          </button></li>
+                          <li *ngIf="searchUser.friend == 2 " class="list_action">
+                            <button class="btn btn-primary" >
+                            <img src="assets/images/newAssests/send_request.png">
+                          </button></li>
+                          <li *ngIf="searchUser.friend == 0 " class="list_action">
+                            <button class="btn btn-primary" (click)="addFriend(searchUser ,searchUserValue)">
+                            <i class="fas fa-user-plus" style="color : green;">
+                            </i></button></li>
+                      </ul>
+                    </div>
+                  </div>               
+                
+                </section>
+                </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+</section>
+
+
+  

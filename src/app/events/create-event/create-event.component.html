@@ -1,0 +1,230 @@
+<!--end Left -->
+
+<div class="container-fluid">
+    <section class="col-md-12">
+            <div class="title_page">
+                <h1>CREATE EVENT<span>CREATE EVENT</span></h1>
+            </div>
+          <div class=create_event>
+            <form class="create_event_form"  #f="ngForm" 
+            (ngSubmit)="createEvent(f)">
+
+              <div class="picture-container">
+                <div class="picture">
+                  <img [src] ="eventUploadPic"
+                    class="picture-src" id="wizardPicturePreview" title="">
+                  <input type="file" id="wizard-picture" class=""
+                  (change)="onFileChange($event.target.files)">
+                </div>
+                <h6 style="font-weight: bold;">Upload image</h6>   
+              </div>
+
+              <div class="form-group">	
+                    <label>Category</label>
+                    <select class="form-control border" id="games">
+                      <option value="0" disabled="disabled" selected>Select Category</option>
+                  <option value="volvo">Volvo</option>
+                  <option value="saab">Saab</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                </select>
+                <i class="fas fa-sort-down"></i>
+              </div>
+
+  
+              <div class="form-group">
+                    <label>Activity</label>
+                    <input *ngIf="!activitySelected" class="form-control border" 
+                    type="name" data-toggle="modal" 
+                    data-target="#myModal2" 
+                    placeholder="Choose Game">
+      
+                    <input *ngIf="activitySelected" class="form-control border" 
+                    type="name" data-toggle="modal" 
+                    data-target="#myModal2" 
+                    placeholder="Choose Game"
+                    value="{{selectedActivity.activity_name}}">
+              </div>
+
+              <div class="modal fade choose_games" id="myModal2" role="dialog" #closeBtn>
+								<div class="modal-dialog dailogActivities">
+								
+
+								  <div class="modal-content">
+									<div class="modal-body activitiesModalBody">
+											   <div class="row">
+											   <div class="col-md-4" *ngFor="let activity of activities">
+													<a ><div class="cards" (click)="setActivity(activity)" #closeBtn>
+														<ul>
+															<li>
+																<span>
+																	<img [src] ="activity.activity_pic ? imagePath + activity.activity_pic : dummyImage"> 
+																	{{activity.activity_name}}
+																</span>
+															</li>
+														</ul>
+													</div></a>
+											  </div>
+										  </div>
+									</div>
+								  </div> 
+								</div>
+							  </div>
+
+
+
+  
+              <div style="padding-right:0px; padding-left:0px;" class="col-md-6">
+                <label>Location</label><br>
+                <input 
+                placeholder="search for location" 
+                autocorrect="off" autocapitalize="off" 
+                spellcheck="off" type="text" class="form-control border" 
+                #search 
+                name="locationName"
+                #locationName="ngModel"
+                ngModel>                
+              </div>
+  
+              <div class="form-group">
+                <div class="row">
+                  <div style="padding-left:0px;" class="col-md-6">
+                      <div class="form-group">
+                      <label>Event Name</label>
+                        <input class="form-control border" type="name" name="" placeholder="Enter Event Name">
+                      </div>
+  
+                </div>
+                <div style="padding-right:0px; padding-left:0px;" class="col-md-6">
+                      <div class="form-group">
+                        <label>Host Name</label>
+                        <input class="form-control border" type="name" name="" placeholder="Enter Host Name">
+                      </div>
+  
+                    </div>
+              </div>
+              </div>
+  
+              <div class="form-group">
+                <div class="row">
+                  <div style="padding-left:0px;" class="col-md-6">
+                      <div class="form-group">
+                      <label>Host's Email</label>
+                        <input class="form-control border" type="name" name="" placeholder="Enter Host's Email">
+                      </div>
+  
+                </div>
+                <div style="padding-right:0px; padding-left:0px;" class="col-md-6">
+                      <div class="form-group">
+                        <label>Host's Contact Number</label>
+                        <input class="form-control border" type="name" name="" placeholder="Enter Contact Number">
+                      </div>
+  
+                    </div>
+              </div>
+              </div>
+  
+              <div class="form-group">
+                <div class="row">
+                  <div style="padding-left:0px;" class="col-md-6">
+                      <div class="form-group">
+                        <label>Enter Number of Seats(Optional)</label>
+                        <input class="form-control border" type="name" name="" placeholder="Enter Seats Number">
+                      </div>
+  
+                </div>
+                <div style="padding-right:0px; padding-left:0px;" class="col-md-6">
+                      <div class="form-group">
+                        <label>Day Type</label>
+                        <select class="form-control border" id="games">
+                          <option value="0" disabled="disabled" selected>Enter Day Type</option>
+                      <option value="volvo">Full Day</option>
+                      <option value="saab">Half Day</option>
+                    </select>
+                    <i class="fas fa-sort-down"></i>
+                    </div>
+  
+                    </div>
+              </div>
+              </div>
+  
+
+              <!-- <div class="form-group half_input">
+                  <label>DATE OF BIRTH</label>
+  
+                      <input class="form-control"  matInput [matDatepicker]="picker" date="true" time="true" placeholder="Choose a date">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+              </div> -->
+             <div style="padding-right:12px;" class="col-md-6 space_up">
+               <div class="form-group">
+                     <label>Start Date and time</label>
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input type='text' class="form-control border" placeholder="dd/mm/yyyy hh:mm" matInput [matDatepicker]="picker" date="true" time="true">
+                            <!-- <input class="form-control border"  matInput [matDatepicker]="picker" date="true" time="true" placeholder="Choose a date"> -->
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <span class="input-group-addon">
+                                <span><mat-datepicker #picker></mat-datepicker></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                 
+               <div class="col-md-6 space_up">
+                 <div class="form-group">
+                   <label>End Date and time</label>
+                      <div class='input-group date' id='datetimepicker2' (click)="pickDate()">
+                          <input type='text' class="form-control border" placeholder="dd/mm/yyyy hh:mm" />
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+                </div>
+  
+  
+  
+              <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="description border" placeholder="Enter Description"></textarea>
+              </div>
+              <div class="form_submit_btn  text-center">
+                <button type="submit" class="btn btn-default form_submit btn_color">CREATE</button>
+              </div>
+            </form>
+          </div>
+    </section>
+  </div>
+  
+  <!-- datetime_picker -->
+  <script type="text/javascript">
+              $(function () {
+                console.log("yaha nahi hai")
+                  $('#datetimepicker1').datetimepicker();
+              });
+    </script>
+     <script type="text/javascript">
+              $(function () {
+                  $('#datetimepicker2').datetimepicker();
+              });
+    </script>
+  <!-- picker -->
+  <!-- image_view -->
+   <script>
+          $(document).ready(function(){
+      // Prepare the preview for profile picture
+          $("#wizard-picture").change(function(){
+              readURL(this);
+          });
+      });
+      function readURL(input) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+  
+              reader.onload = function (e) {
+                  $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+              }
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+   </script>

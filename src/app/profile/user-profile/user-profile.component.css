@@ -1,0 +1,472 @@
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.friendscard_row{
+	margin:12px;
+}
+
+
+.image-circle{
+	border-radius: 50%;
+	width: 67px;
+    height: 67px;
+}
+
+ul{
+	list-style: none;
+}
+.points {
+    font-size: 12px;
+    line-height: 21px;
+    background-color: #f8f8f8;
+    padding-top: 13px;
+	padding-bottom: 7px;
+}
+.tabs_links{
+	margin-top: 46px;
+
+}
+.tabs_links ul{
+	padding: 0px;
+}
+.tabs_links li {
+
+    background-color: #f8f8f8;
+    margin-top: 20px;
+    padding: 20px;
+    padding-left: 20px;
+    padding-left: 38px;
+
+}
+.tabs_links li:hover {
+	box-shadow:0px 0px 10px 0px #3333;
+}
+.tabs_links a{
+	color:#333;
+	text-decoration: none;
+}
+
+
+
+.search_bar{
+	text-align: right;
+}
+.partition .nav-tabs > li {
+    margin-bottom: -1px;
+}
+.partition .main_tabs_1 > li.active > a, .main_tabs_1 > li.active > a:focus, .main_tabs_1 > li.active > a:hover {
+
+    color: #12959f;
+    cursor: default;
+    background-color: #fff;
+    border: none;
+     border-bottom: 1px solid #12959f;
+
+}
+ .inner_tabs > li.active > a,  .inner_tabs > li.active > a:focus,  .inner_tabs > li.active > a:hover{
+
+    color: #12959f;
+    cursor: default;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #12959f;
+}
+.inner_tabs > li > a {
+    padding: 12px 31px;
+
+}
+
+.partition .main_tabs_1 a{
+	color:#5f6368;
+	border-bottom: 1px solid transparent;
+}
+.partition input {
+    border: 1px solid #d2d2d7;
+    border-radius: 100px;
+    padding: 6px;
+    padding-left: 15px;
+    position: relative;
+    width: 282px;
+}
+.partition button {
+
+    position: absolute;
+    right: 15px;
+    padding: 7px 19px;
+    border-radius: 100px;
+    background-color: #12959f;
+    border: none;
+    color: #fff;
+
+}
+.cards img{
+	width: 60px;
+}
+.cards{
+	background-color: #f8f8f8;
+	box-shadow:0px 0px 10px 0px #3333;	
+	padding-top: 8px;
+	padding-bottom:  8px;
+	margin-top: 30px;	 
+}
+.cards ul{
+	padding-left: 10px;
+	margin-bottom: 0px;
+}
+.close_btn{
+	float:right;
+}
+.close_btn .button {
+    background-color: transparent;
+    border: 0px;
+    font-size: 23px;
+    color: red;
+    margin-top: 12px;
+}
+.add_btn .button {
+    background-color: transparent;
+    border: 0px;
+    font-size: 23px;
+    color: green;
+    margin-top: 12px;
+}
+.add_btn{
+	float:right;
+}
+.tab-content {
+    margin-top: 0px;
+}
+.inner_tabs a{
+	color:#555;
+}
+.inner_tabs > li.active > a, .inner_tabs > li.active > a:focus, .inner_tabs > li.active > a:hover{
+	color:#12959f;
+	
+}
+.nav.nav-tabs.inner_tabs {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.partition .nav-tabs > li {
+    margin-bottom: -1px;
+}
+.people_card{
+	background-color: #f8f8f8;
+	text-align: center;
+	border-radius: 4px;
+	box-shadow: 0px 0px 10px 0px #3333;
+	padding-bottom:0px;
+    margin-top: 25px;
+    
+  
+}
+.people_card img{
+    width: 100%;
+    width: 100%;
+    height: 16vw;
+   -o-object-fit: cover;
+   object-fit: cover;
+}
+.unfollow{
+	background-color: #e83435;
+	color:#fff;
+	border:1px solid #e83435;
+}
+.unfollow:hover{
+	color:red;
+	background-color: transparent;
+	border:1px solid #e83435;
+}
+#search_user input {
+    border: 1px solid #d2d2d7;
+    border-radius: 100px;
+    padding: 6px;
+    padding-left: 15px;
+    position: relative;
+    width: 100%;
+}
+#search_user button {
+
+    position: absolute;
+  	right:52px;
+    padding: 7px 19px;
+    border-radius: 100px;
+    background-color: #12959f;
+    border: none;
+    color: #fff;
+
+}
+.tab_friends {
+    float: right !important;
+}
+.main_tabs_1 {
+    padding-right: 0px;
+}
+.friendscard_row h5{
+	padding-left: 0px; 
+	text-align: left;
+}
+.friendscard_row .dropdown {
+    text-align: right;
+    padding: 0px;
+}
+.friendscard_row p{
+	font-size: 12px;
+	font-weight: normal;
+	margin-top: 6px;
+}
+.friendscard_row h5{
+	font-size: 14px;
+	font-weight: bold;
+	margin-top:0px;
+}
+.inner_search {
+    margin-top: 50px !important;
+}
+
+#friend_action_menu {
+    background-color: transparent;
+    border: 0px;
+    color:#adb5bd;
+}
+
+/*------------New---------------------*/
+
+.tabs_links li:hover, .tabs_links .active {
+
+    box-shadow: 0px 0px 10px 0px #3333;
+    background-color: #12959f;
+    color: #fff;
+
+}
+.no_post img{
+    width: 124px;
+    opacity: 0.6;
+}
+.no_post{
+    text-align: center;
+    color:#12959f;
+    font-weight: bold;
+    padding: 45px;
+}
+.user_profile_show{
+    color:#333;
+    cursor: pointer;
+}
+.user_profile_show:hover{
+    color:#12959f;
+    cursor: pointer;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+    .left_portion {
+        height: auto;
+    }
+    .title_page h1 span {
+        font-size: 55px;
+    }
+    .partition input{
+        width: 100%;
+    }
+    .search_bar {
+        margin-top: 12px;
+    }
+    .nav.nav-tabs.inner_tabs {
+        width: 100%;
+    }
+    .inner_tabs > li > a {
+        padding: 11px 5px;  
+    }
+    .inner_tabs a {
+        font-size: 11px;
+    }
+    #search_user button {
+        right: 35px;
+    }
+    .friendscard_row h5 {
+        width: 60% !important;
+         float: left;
+    }   
+
+    .friendscard_row p {
+        width: 40%;
+    }
+    .profile_info {
+        text-align: center;
+    }
+    .pic_name{
+        margin:0 auto;
+    }
+}
+
+
+/* change design */
+
+
+.post_portion{
+    padding: 19px;
+    margin-top: 15px;    
+}
+.profile_friend_bg{
+     margin-bottom: 18px;
+    background-color: #fff;
+    box-shadow:0px 0px 10px 0px #3333;
+    padding: 19px;
+    height: 80vh;
+    overflow-y: scroll;
+}
+.title_page {
+    margin-bottom: 18px;
+    background-color: #fff;
+    box-shadow:0px 0px 10px 0px #3333;
+    padding: 19px;
+}
+.title_page h1{
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    text-align: center;
+}
+.title_page h1 span{
+    white-space: nowrap;
+    color: #000;
+    font-size: 73px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.1;
+    opacity: 0.03;
+    margin-top: -5px;
+}
+.pro_img img{
+    border-radius: 50%;
+    width: 63px;
+    height: 63px;
+}
+.friend_profile_detail{
+    width: 50%;
+    margin:0 auto;
+    text-align: center;
+    margin-bottom: 90px;
+}
+.pro_img h2{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 4px;
+}
+.pro_img p{
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+.status_li{
+    list-style: none;
+}
+.status_li li{
+    display: inline-block;
+    padding-right: 25px;
+}
+.status_li img{
+    width: 20px;
+}
+ul{
+    list-style: none;
+}
+
+ul li{
+    display: inline-block;
+}
+
+
+.buttons_days_achvmnt a{
+    color:#12959f;
+    text-decoration: none;
+    border:1px solid #12959f;
+    background-color: transparent;
+    padding: 10px 25px;
+    transition: 0.2s;
+    border-radius: 4px;
+}
+.buttons_days_achvmnt a:hover{
+    color:#fff;
+    text-decoration: none;
+    border:1px solid #12959f;
+    background-color: #12959f;
+}
+.archievement {
+    margin-right: 150px;
+}
+.page_changer{
+    border:none;
+    float: right;
+}
+.page_changer a{
+    border-color: transparent !important;
+    color:#333333;
+    
+}
+.page_changer > li.active > a, .page_changer > li.active > a:focus, .page_changer > li.active > a:hover{
+    border-bottom: 1px solid #12959f !important;
+    color:#12959f;
+}
+
+/*searchbar*/
+.searchbar_li input {
+    border: 1px solid #d2d2d7;
+    border-radius: 100px;
+    padding: 6px;
+    padding-left: 15px;
+    position: relative;
+    width: 100%;
+}
+.searchbar_li button {
+    position: absolute;
+    right: 0px;
+    padding: 7px 19px;
+    border-radius: 100px;
+    background-color: #12959f;
+    border: none;
+    color: #fff;
+    top:0;
+}
+/*----------*/
+.right_space{
+    margin-right:35px;
+}
+.activity_card img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px; 
+}
+.activity_card p{
+    font-size: 14px;
+    font-weight: bold;
+}
+.friends_profilepage .tab-content{
+    margin-top: 50px;
+}
+::placeholder{
+    color:#d2d2d7 !important;
+}
+
+
+@media only screen and (min-width:320px) and (max-width:768px){
+    .title_page h1 span {
+        font-size: 35px;
+    }
+    .title_page h1{
+        font-size: 25px;
+    }
+    .create_event_form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px){
+
+}

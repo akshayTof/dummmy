@@ -1,0 +1,27 @@
+<div class="container">
+  <section class="history_pg">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let activity of activities">
+          <div class="activity_card">
+            <div class="head_card text-center">
+              <img [src] ="activity.activity_pic ? imagePath + activity.activity_pic : dummyImage">
+              <p><a href="#"><span class="title_activity">{{activity.activity_name}} with team  {{activity.linkup_name}}</span></a></p>
+            </div>
+            
+            <div class="detail_activity">
+              <p><span class="location">{{activity.linkup_state}}</span></p>
+              <p>{{activity.linkup_city}}</p>
+              <p> {{activity.linkup_start_time}} </p>
+              <div class="action_dropdown">
+                <button class="action_dropbtn">Action</button>
+                <div class="dropdown-content">
+                  <a href="#">Navigate</a>
+                  <a href="#">Reuse</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</div>
