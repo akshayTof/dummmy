@@ -1,34 +1,23 @@
-import { Router } from '@angular/router';
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-type PaneType = 'left' | 'right' | 'normal';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger
-} from '@angular/animations';
+import { Component } from '@angular/core';
+// import {  } from '@';
+import { environment } from '@environments/environment';
+import { ArtistService } from '../artist.service';
+import { HttpClient } from '@angular/common/http';
 
-declare var $: any;
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: [
-   './home.component.css',
-   '../shared/css/slick-theme.css',
-   '../shared/css/slick.css'
-
-  ]
+@Component ({
+   selector: 'app-home-component',
+   templateUrl: '/home.component.html',
 })
+export class HomeComponent  {
 
-export class HomeComponent implements OnInit {
-  constructor(private router: Router) { }
+   artist: Object;
+
+  constructor(private artistData: ArtistService, private http: HttpClient) { }
 
   ngOnInit() {
-}
-
-
+    this.artistData.getartist().subscribe(artistData => {
+      this.artist = artistData;
+      console.log(this.artist);
+    })
+  }
 }

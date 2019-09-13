@@ -5,8 +5,7 @@
     "module": "commonjs",
     "types": [
       "jasmine",
-      "node",
-      "googlemaps"
+      "node"
     ]
   },
   "files": [
